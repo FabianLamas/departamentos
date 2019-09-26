@@ -1,0 +1,40 @@
+<!-- <h2>{{heroOld.name | uppercase}} Details</h2>
+<div><span>id: </span>{{heroOld.id}}</div>
+
+<div>
+  <label>name:
+    <input [(ngModel)]="heroOld.name" placeholder="name"/>
+  </label>
+</div>
+================================================================= 
+  LO SACO PARA AHORRAR ESPACIO
+-->
+<!-- <h2>Mis Heroes</h2>
+<ul class="heroes">    NO VA MAS, AHORA VA POR ID
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)"  [class.selected]="hero === selectedHero">
+    <span class="badge">{{hero.id}}</span> <span class="name">{{hero.name}}</span> 
+  </li>
+</ul> -->
+
+<!-- <div *ngIf="selectedHero">  
+  <h2>{{selectedHero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedHero.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedHero.name" placeholder="name"/>
+    </label>
+  </div>
+</div> 
+    ESTO ES LO MISMO QUE ABAJO SOLO QUE EN OTRO COMPONENTE
+-->
+<!-- 
+  NO VA MAS
+<app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
+<h2>Mis Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+  </li>
+</ul>
